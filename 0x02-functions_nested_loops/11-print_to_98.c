@@ -1,53 +1,47 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
-* print_times_table - Entry point
-* @n: number of the times table
+* print_to_98 - a function that prints all natural numbers from n to 98
+* user input's number prints to 98, regardless < 98 or > 98
+* @n: number input
 * Return: Always 0 (Success)
 *
 */
 
-void print_times_table(int n)
+void print_to_98(int n)
 
 {
-int i, j, k;
-if (n >= 0 && n <= 15)
+if (n < 98)
 {
-for (i = 0; i <= n; i++)
+while (n <= 98)
 {
-for (j = 0; j <= n; j++)
+printf("%d", n);
+
+if (n != 98)
 {
-k = j * i;
-if (j == 0)
-{
-_putchar(k + '0');
+printf(", ");
 }
-else if (k < 10 && j != 0)
-{
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar(' ');
-_putchar(k + '0');
-}
-else if (k >= 10 && k < 100)
-{
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar((k / 10) + '0');
-_putchar((k % 10) + '0');
-}
-else if (k >= 100)
-{
-_putchar(',');
-_putchar(' ');
-_putchar((k / 100) + '0');
-_putchar(((k / 10) % 10) + '0');
-_putchar((k % 10) + '0');
+n++;
 }
 }
-_putchar('\n');
+
+else if (n > 98)
+{
+while (n >= 98)
+{
+printf("%d", n);
+
+if (n != 98)
+{
+printf(", ");
+																	}
+n--;
 }
 }
+else
+{
+printf("98");
+}
+printf("\n");
 }
